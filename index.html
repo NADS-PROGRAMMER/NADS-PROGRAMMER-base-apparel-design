@@ -18,32 +18,43 @@
 
   <main>
 
-    <header>
-      <img src="./images/logo.svg" alt="">
-    </header>
+    <div class="main-container">
+        <!-- Logo -->
+        <header>
+          <img src="./images/logo.svg" alt="">
+        </header>
+        
+        <img class="mobile-photo" src="./images/hero-mobile.jpg" alt="model of base apparel">
+        <!-- <img class="desktop-photo" src="./images/hero-desktop.jpg" alt=""> -->
+        <!-- DETAILS -->
+        <div class="container">
+          <section class="title">
+            <span>We're </span>
+            <span>coming</span>
+            <span>soon</span>
+          </section>
+        
+          <p class="description">
+            Hello fellow shoppers! We're currently building our new fashion store.
+            Add your email below to stay up-to-date with announcements and our launch deals.
+          </p>
 
-    <img src="./images/hero-mobile.jpg" alt="model of base apparel">
+          <form class="btn-section">
+            <input type="email" id="email-address" placeholder="Email Address" required />
 
-    <!-- DETAILS -->
-    <div class="container">
-      <section class="title">
-        <span>We're </span>
-        <span>coming</span>
-        <span>soon</span>
-      </section>
-
-      <p class="description">
-          Hello fellow shoppers! We're currently building our new fashion store.
-          Add your email below to stay up-to-date with announcements and our launch deals.
-      </p>
+            <img class="error-icon" src="./images/icon-error.svg" alt="">
+            <button>
+              <img src="./images/icon-arrow.svg" alt="">
+            </button>
+            
+          </form>
+          <small class="error-message">Please provide a valid email.</small>
+        </div>
+        
+        
     </div>
-
-    <form class="btn-section">
-      <input type="email" id="email-address" placeholder="Email Address" required>
-      <button>
-        <img src="./images/icon-arrow.svg" alt="">
-      </button>
-    </form>
+    
+    <img class="desktop-photo" src="./images/hero-desktop.jpg" alt="">
   </main>
   <!-- We're coming soon
 

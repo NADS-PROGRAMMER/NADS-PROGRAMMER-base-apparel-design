@@ -27,18 +27,16 @@ $grad2: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
 
 body {
   @include displayFlex(column, center, center);
-  padding: 1rem 0;
-  margin: 0;
 }
 
-main {
+.main-container {
   @include displayFlex(column, flex-start, stretch);
   min-height: 100vh;
   height: 100%;
   width: 100%;
 
   header {
-    padding: 1.5rem 1.5rem;
+    padding: 2rem 2rem;
 
     img {
       display: block;
@@ -46,16 +44,20 @@ main {
     }
   } // end of header
 
+  .mobile-photo {
+    width: 100%;
+  }
+
   .container {
     @include displayFlex(column, none, none);
     gap: 1.5rem;
     padding: 1.1rem;
 
-    * {
+    *:not(input[type="email"]) {
       text-align: center;
     }
 
-    // Title
+    // Title Section
     .title {
       @include displayFlex(column, none, none);
       padding-top: 3rem;
@@ -74,6 +76,7 @@ main {
       }
     }
 
+    // Paragraph
     .description {
       //   padding: 0.5rem;
       font-weight: 400;
@@ -82,36 +85,155 @@ main {
       line-height: 1.6em;
       font-size: 1.001rem;
     }
+
+    .btn-section {
+      //   max-width: 100%;
+
+      //   padding: 0 2rem;
+      position: relative;
+      // background: red;
+      input {
+        outline: none;
+        border: none;
+        border: 1px solid $desaturatedRed;
+        width: 100%;
+        padding: 1rem 6.5rem 1rem 1.3rem;
+        border-radius: 25px;
+      }
+      input::placeholder {
+        color: $desaturatedRed;
+      }
+
+      .error-icon {
+        visibility: hidden;
+        position: absolute;
+
+        // right: 110px;
+        right: 70px;
+        bottom: 10px;
+        transform: translate(-1px, -1px);
+      }
+
+      button {
+        box-shadow: 0px 10px 30px $desaturatedRed;
+        outline: none;
+        border: none;
+        padding: 0.9rem 1.8rem;
+        // padding: 0.9rem 2.5rem; // for desktop
+        background: $grad2;
+        border-radius: 40px;
+
+        position: absolute;
+
+        // right: 30px;
+        right: -3px;
+        bottom: -3px;
+        transform: translate(3px, 1px);
+      }
+
+      button:hover {
+        cursor: pointer;
+        background: hsl(0, 80%, 87%);
+      }
+    }
+
+    .error-message {
+      visibility: hidden;
+      color: $softRed;
+      text-align: left !important;
+      margin: -10px 0;
+      padding: 0 1rem;
+    }
+  }
+}
+
+.desktop-photo {
+  display: none;
+}
+
+// MEDIA QUERIES
+
+@media only screen and (min-width: 768px) {
+  main {
+    max-width: 50vw;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  body {
+    padding: 0;
+  }
+  main {
+    background-image: url("../images/bg-pattern-desktop.svg");
+    background-size: 50% 100%;
+    background-repeat: repeat-x;
+    background-position: bottom right;
+    max-width: 100vw;
+    width: 100vw;
+    height: 100vh;
+    @include displayFlex(row, stretch, none);
+    justify-content: space-between;
   }
 
-  .btn-section {
-    width: 100%;
-    padding: 0 2rem;
-    position: relative;
-    // background: red;
-    input {
-      outline: none;
-      border: none;
-      border: 1px solid $desaturatedRed;
-      width: 100%;
-      padding: 1rem 1.3rem;
-      border-radius: 25px;
-    }
-    input::placeholder {
-      color: $desaturatedRed;
-    }
-    button {
-      box-shadow: 0px 10px 30px $desaturatedRed;
-      outline: none;
-      border: none;
-      padding: 0.7rem 1.6rem;
-      background: $grad2;
-      border-radius: 40px;
+  .desktop-photo {
+    display: block;
+    height: 100vh;
+  }
 
-      position: absolute;
-      right: 30px;
-      bottom: 0px;
-      transform: translate(-1px, -1px);
+  .main-container {
+    display: grid;
+    grid-auto-rows: min-content;
+    gap: calc(40% / 2);
+    width: 40em;
+    margin: 0 auto;
+    padding: 5rem 5.5rem;
+    height: 100%;
+
+    // hidden mobile photo
+    .mobile-photo {
+      display: none;
+    }
+
+    // Logo
+    header {
+      padding: 0;
+      img {
+        width: 9rem;
+      }
+    }
+
+    // Title, description and button
+    .container {
+      padding: 0;
+
+      .title {
+        padding-top: 0;
+        *:not(input[type="email"]) {
+          text-align: left;
+          font-size: 3.5rem;
+        }
+      }
+
+      .description {
+        text-align: left !important;
+        width: 45ch;
+      }
+
+      .btn-section {
+        padding-top: 2.1rem;
+        width: 25em;
+
+        .error-icon {
+          position: absolute;
+          right: 95px;
+          bottom: 10px;
+          transform: translate(-1px, -1px);
+        }
+
+        button {
+          right: 0%;
+          padding: 0.9rem 2.5rem;
+        }
+      }
     }
   }
 }
