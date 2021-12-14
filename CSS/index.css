@@ -46,12 +46,12 @@ body {
   padding: 2rem 2rem;
 }
 
-.main-container header img {
+.main-container header .header__logo {
   display: block;
   width: 7rem;
 }
 
-.main-container .mobile-photo {
+.main-container .img__mobile-photo {
   width: 100%;
 }
 
@@ -70,7 +70,7 @@ body {
       -ms-flex-align: none;
           align-items: none;
   gap: 1.5rem;
-  padding: 1.1rem;
+  padding: 1.1rem 1.1rem 3rem 1.1rem;
 }
 
 .main-container .container *:not(input[type="email"]) {
@@ -97,7 +97,7 @@ body {
 .main-container .container .title * {
   font-size: 2.8rem;
   text-transform: uppercase;
-  letter-spacing: 0.5rem;
+  letter-spacing: 1rem;
   font-weight: 600;
   color: #413a3a;
 }
@@ -116,6 +116,7 @@ body {
 }
 
 .main-container .container .btn-section {
+  padding-top: 1rem;
   position: relative;
 }
 
@@ -124,8 +125,8 @@ body {
   border: none;
   border: 1px solid #ce9797;
   width: 100%;
-  padding: 1rem 6.5rem 1rem 1.3rem;
-  border-radius: 25px;
+  padding: 1.01rem 6.5rem 1rem 1.3rem;
+  border-radius: 25px 21px 21px 25px;
 }
 
 .main-container .container .btn-section input::-webkit-input-placeholder {
@@ -147,7 +148,7 @@ body {
 .main-container .container .btn-section .error-icon {
   visibility: hidden;
   position: absolute;
-  right: 70px;
+  right: 80px;
   bottom: 10px;
   -webkit-transform: translate(-1px, -1px);
           transform: translate(-1px, -1px);
@@ -158,12 +159,12 @@ body {
           box-shadow: 0px 10px 30px #ce9797;
   outline: none;
   border: none;
-  padding: 0.9rem 1.8rem;
+  padding: 0.79rem 1.7rem;
   background: linear-gradient(135deg, #f8bfbf, #ee8c8c);
   border-radius: 40px;
   position: absolute;
-  right: -3px;
-  bottom: -3px;
+  right: -2px;
+  bottom: 1px;
   -webkit-transform: translate(3px, 1px);
           transform: translate(3px, 1px);
 }
@@ -235,13 +236,13 @@ body {
     padding: 5rem 5.5rem;
     height: 100%;
   }
-  .main-container .mobile-photo {
+  .main-container .img__mobile-photo {
     display: none;
   }
   .main-container header {
     padding: 0;
   }
-  .main-container header img {
+  .main-container header .header__logo {
     width: 9rem;
   }
   .main-container .container {
@@ -270,7 +271,7 @@ body {
             transform: translate(-1px, -1px);
   }
   .main-container .container .btn-section button {
-    right: 0%;
-    padding: 0.9rem 2.5rem;
+    right: -2px;
+    padding: 0.79rem 2.5rem;
   }
 }
