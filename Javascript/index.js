@@ -13,6 +13,14 @@ const setState = (emailBorderColor, visibility) => {
     errorIcon.style.visibility = visibility;
     errorMessage.style.visibility = visibility;
 }
+
+function validateEmail(mail) {
+    if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(mail)) {
+        return true
+    }
+    return false
+}
+
 document.querySelector('form').addEventListener('submit', (e) => {
 
     e.preventDefault();
@@ -21,10 +29,8 @@ document.querySelector('form').addEventListener('submit', (e) => {
 document.querySelector('button').addEventListener('click', () => {
 
     const emailField = document.querySelector('input[type="email"]')
-    const errorIcon = document.querySelector('.error-icon')
-    const errorMessage = document.querySelector('.error-message')
 
-    if (emailField.value === '') {
+    if (emailField.value === '' || validateEmail(emailField.value) === false) {
         setState(softRed, 'visible')
     }
         
