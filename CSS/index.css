@@ -123,6 +123,7 @@ body {
 .main-container .container .btn-section input {
   outline: none;
   border: none;
+  background: linear-gradient(135deg, white, #fff5f5);
   border: 1px solid #ce9797;
   width: 100%;
   padding: 1.01rem 6.5rem 1rem 1.3rem;
